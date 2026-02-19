@@ -11,11 +11,8 @@
             --surface: #111418;
             --text: #e1e1e1;
         }
-
         html { scroll-behavior: smooth; }
         body { background-color: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; margin: 0; }
-
-        /* Navegación */
         nav {
             background: rgba(5, 7, 10, 0.95);
             backdrop-filter: blur(10px);
@@ -29,12 +26,10 @@
             border-bottom: 1px solid rgba(255,255,255,0.1);
             box-sizing: border-box;
         }
-
         .logo { color: var(--accent); font-weight: 800; font-size: 1.5rem; text-decoration: none; }
         .nav-links { display: flex; gap: 20px; list-style: none; margin-left: 30px; }
         .nav-links a { color: var(--text); text-decoration: none; font-size: 0.85rem; opacity: 0.7; transition: 0.3s; }
         .nav-links a:hover { opacity: 1; color: var(--accent); }
-
         #searchBar {
             margin-left: auto;
             background: #1a1f26;
@@ -45,46 +40,32 @@
             outline: none;
             width: 250px;
         }
-
-        /* Hero */
         .hero { padding-top: 100px; display: flex; flex-direction: column; align-items: center; }
-        .video-box { width: 90%; max-width: 950px; aspect-ratio: 16/9; border-radius: 12px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.6); }
+        .video-box { width: 90%; max-width: 950px; aspect-ratio: 16/9; border-radius: 12px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.6); background: #000; }
         iframe { width: 100%; height: 100%; border: none; }
-
-        /* Categorías */
         .shelf { padding: 40px 5% 0 5%; }
         .shelf h2 { font-size: 1.4rem; margin-bottom: 20px; border-left: 4px solid var(--accent); padding-left: 15px; }
         .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 20px; }
-        
         .card { background: var(--surface); border-radius: 8px; overflow: hidden; cursor: pointer; transition: 0.3s; border: 1px solid transparent; }
         .card:hover { transform: scale(1.05); border-color: var(--accent); }
         .card img { width: 100%; aspect-ratio: 16/9; object-fit: cover; }
-        .card-info { padding: 12px; font-size: 0.8rem; font-weight: 500; height: 40px; overflow: hidden; }
-
-        /* Formulario */
-        .contact-section { margin: 60px 5%; padding: 40px; background: var(--surface); border-radius: 15px; border: 1px solid #30363d; }
-        .contact-form { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px; }
-        .contact-form textarea { grid-column: span 2; height: 100px; }
-        .btn-submit { grid-column: span 2; background: var(--accent); padding: 12px; font-weight: bold; border-radius: 5px; cursor: pointer; border: none; }
-        input, textarea { background: #0b0e11; border: 1px solid #30363d; padding: 12px; color: white; border-radius: 5px; }
+        .card-info { padding: 12px; font-size: 0.8rem; font-weight: 500; height: 50px; overflow: hidden; }
     </style>
 </head>
 <body>
-
     <nav>
         <a href="#" class="logo">TECHSTREAM</a>
         <ul class="nav-links">
             <li><a href="#reparacion">Técnico</a></li>
             <li><a href="#unboxing">Unboxing</a></li>
             <li><a href="#builds">Builds</a></li>
-            <li><a href="#contacto">Soporte</a></li>
         </ul>
         <input type="text" id="searchBar" placeholder="Buscar tutorial...">
     </nav>
 
     <div class="hero">
         <div class="video-box">
-            <iframe id="main-player" src="https://www.youtube.com/embed/f0XpT9StSIg?rel=0" allowfullscreen></iframe>
+            <iframe id="main-player" src="https://www.youtube.com/embed/f0XpT9StSIg?rel=0&enablejsapi=1" allowfullscreen></iframe>
         </div>
         <h3 id="now-playing" style="margin-top:20px; opacity:0.8;">Mantenimiento Preventivo de PC</h3>
     </div>
@@ -100,40 +81,29 @@
     </section>
 
     <section id="builds" class="shelf">
-        <h2>PC Builds de Entusiastas</h2>
+        <h2>PC Builds Increíbles</h2>
         <div class="grid" id="builds-grid"></div>
-    </section>
-
-    <section id="contacto" class="contact-section">
-        <h2>¿Necesitas Soporte Técnico?</h2>
-        <p>Completa el formulario y me pondré en contacto contigo para una cotización.</p>
-        <form class="contact-form">
-            <input type="text" placeholder="Tu Nombre" required>
-            <input type="email" placeholder="Email de contacto" required>
-            <textarea placeholder="Describe el fallo de tu equipo..."></textarea>
-            <button type="submit" class="btn-submit">Enviar Solicitud</button>
-        </form>
     </section>
 
     <script>
         const categories = {
             'repair-grid': [
-                { id: "f0XpT9StSIg", title: "Limpieza profunda paso a paso" },
-                { id: "X_pU6uBvU8w", title: "Cómo testear fuentes de poder" },
-                { id: "Y_m_79Xf_r0", title: "Cambio de pasta térmica GPU" },
-                { id: "v=o8E_G22D08Q", title: "Diagnóstico de placa base" }
+                { id: "f0XpT9StSIg", title: "Limpieza profunda de PC Gamer" },
+                { id: "X_pU6uBvU8w", title: "Test de Fuentes de Poder con Multímetro" },
+                { id: "Y_m_79Xf_r0", title: "Cambio de Pasta Térmica a GPU" },
+                { id: "o8E_G22D08Q", title: "Diagnóstico: PC no da imagen" }
             ],
             'unbox-grid': [
-                { id: "9PbtP9v9H68", title: "La RTX 4090 es Gigante" },
-                { id: "ny_W8pBof0M", title: "Teclado Custom de $500" },
-                { id: "N_97m0FshhU", title: "Monitor OLED 240Hz" },
-                { id: "v=X68pDizS8Y4", title: "Review Procesadores i9 vs Ryzen 9" }
+                { id: "9PbtP9v9H68", title: "RTX 4090: Unboxing del Monstruo" },
+                { id: "ny_W8pBof0M", title: "El teclado más rápido del mundo" },
+                { id: "N_97m0FshhU", title: "Monitor OLED 4K para Gaming" },
+                { id: "X68pDizS8Y4", title: "i9 14900K vs Ryzen 9 7950X" }
             ],
             'builds-grid': [
-                { id: "v=p_S-jG9W29k", title: "PC Gamer en una Mesa" },
-                { id: "v=PXaLc9AYIcg", title: "Build Refrigeración Líquida" },
-                { id: "v=9OStvJvP_S8", title: "PC Gamer de $5000" },
-                { id: "v=t_6_G9Xf_r0", title: "Montaje Mini-ITX Extremo" }
+                { id: "p_S-jG9W29k", title: "PC Build dentro de una mesa" },
+                { id: "PXaLc9AYIcg", title: "Refrigeración Líquida personalizada" },
+                { id: "9OStvJvP_S8", title: "PC de $5000: Máximo Rendimiento" },
+                { id: "v_E9f6vYpS8", title: "Montaje en Mini-ITX Compacto" }
             ]
         };
 
@@ -145,7 +115,7 @@
                     card.className = 'card';
                     card.innerHTML = `<img src="https://img.youtube.com/vi/${v.id}/mqdefault.jpg"><div class="card-info">${v.title}</div>`;
                     card.onclick = () => {
-                        document.getElementById('main-player').src = `https://www.youtube.com/embed/${v.id}?autoplay=1`;
+                        document.getElementById('main-player').src = `https://www.youtube.com/embed/${v.id}?autoplay=1&rel=0`;
                         document.getElementById('now-playing').innerText = v.title;
                         window.scrollTo({top: 0, behavior: 'smooth'});
                     };
