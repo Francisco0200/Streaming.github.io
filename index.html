@@ -101,7 +101,7 @@
 
         .card:hover { transform: translateY(-10px); border-color: var(--accent); box-shadow: 0 10px 20px rgba(0,0,0,0.5); }
         .card img { width: 100%; aspect-ratio: 16/9; object-fit: cover; }
-        .card-info { padding: 15px; font-weight: 600; font-size: 0.8rem; height: 60px; overflow: hidden; }
+        .card-info { padding: 15px; font-weight: 600; font-size: 0.85rem; height: 60px; overflow: hidden; }
 
         /* CONTACTO */
         .contact-section { margin: 80px 5%; padding: 40px; background: var(--surface); border-radius: 15px; border: 1px solid #30363d; }
@@ -121,7 +121,9 @@
             <li><a href="#builds">PC Builds</a></li>
             <li><a href="#contacto">Soporte</a></li>
         </ul>
-        <input type="text" id="searchBar" placeholder="Buscar contenido...">
+        <div class="search-container">
+            <input type="text" id="searchBar" placeholder="Buscar contenido...">
+        </div>
     </nav>
 
     <div id="video-modal">
@@ -149,17 +151,17 @@
 
     <section id="contacto" class="contact-section">
         <h2>¿Necesitas Soporte Técnico?</h2>
-        <p>Escribe los detalles del problema de tu equipo para recibir soporte técnico profesional.</p>
+        <p>Escribe los detalles del problema de tu equipo para recibir soporte profesional.</p>
         <form class="contact-form">
-            <input type="text" placeholder="Nombre completo" required>
-            <input type="email" placeholder="Correo electrónico" required>
+            <input type="text" placeholder="Tu Nombre Completo" required>
+            <input type="email" placeholder="Correo Electrónico" required>
             <textarea placeholder="Describe el fallo..."></textarea>
-            <button type="submit" class="btn-submit">Enviar Solicitud</button>
+            <button type="submit" class="btn-submit">Enviar Solicitud de Servicio</button>
         </form>
     </section>
 
     <script>
-        // LISTA DE 10 VIDEOS TOTALMENTE OPERATIVOS
+        // LISTA DEFINITIVA DE 9 VIDEOS FUNCIONALES
         const categories = {
             'repair-grid': [
                 { id: "BCnQGgctQ_Y", title: "Mantenimiento Preventivo de PC" },
@@ -174,7 +176,6 @@
             'builds-grid': [
                 { id: "4otj4TZmOZs", title: "Guía de Montaje Hardware 2024 Paso a Paso" },
                 { id: "PXaLc9AYIcg", title: "Build Refrigeración Líquida (Video 10)" },
-                { id: "9PbtP9v9H68", title: "Unboxing Clásico: RTX 4090 PNY" },
                 { id: "bP03AKVA1i0", title: "UNBOXING: nVidia RTX 4090 Founders Edition" }
             ]
         };
