@@ -170,17 +170,21 @@
         const categories = {
             'repair-grid': [
                 { id: "BCnQGgctQ_Y", title: "Mantenimiento Preventivo de PC" },
+                { id: "ffdQHGXU9Do", title: "Monitor no enciende pero el CPU sí | Solución Energía Estática" },
                 { id: "IimIsW4S_vs", title: "Diagnóstico: PC no enciende | Sin señales de vida" },
                 { id: "v4o_2_6v4vI", title: "Diagnóstico: PC enciende pero no da imagen" }
             ],
             'unbox-grid': [
+                { id: "37rasBhG7B4", title: "Review Teclado Mecánico Custom: Wooting 60HE" },
                 { id: "N_psXRtVgAQ", title: "¡He LANZADO mi TECLADO Mecánico Custom! (Nate Gentile)" },
                 { id: "-fTogZgBXwE", title: "Unboxing Extremo: NVIDIA RTX 4090 ASUS ROG Strix" },
                 { id: "ny_W8pBof0M", title: "Review Teclado Mecánico Custom (Wooting)" }
             ],
             'builds-grid': [
                 { id: "4otj4TZmOZs", title: "Guía de Montaje Hardware 2024 Paso a Paso" },
-                { id: "PXaLc9AYIcg", title: "Build Refrigeración Líquida (Video 10)" }
+                { id: "PXaLc9AYIcg", title: "Build Refrigeración Líquida (Video 10)" },
+                { id: "9PbtP9v9H68", title: "Unboxing Clásico: RTX 4090" },
+                { id: "6-mI_Fm0HTo", title: "Guía de Montaje Hardware 2024" }
             ]
         };
 
@@ -205,7 +209,7 @@
             const container = document.getElementById('modal-video-container');
             document.getElementById('modal-video-title').innerText = title;
             
-            container.innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/${id}?autoplay=1&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
+            container.innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/${id}?autoplay=1&rel=0" frameborder="0" allow="autoplay; encrypted-media; allowfullscreen></iframe>`;
             modal.style.display = 'flex';
         }
 
