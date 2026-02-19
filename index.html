@@ -124,9 +124,12 @@
         <ul class="nav-links">
             <li><a href="#reparacion">Técnico</a></li>
             <li><a href="#unboxing">Unboxing</a></li>
+            <li><a href="#builds">PC Builds</a></li>
             <li><a href="#contacto">Soporte</a></li>
         </ul>
-        <input type="text" id="searchBar" placeholder="Buscar contenido...">
+        <div class="search-container">
+            <input type="text" id="searchBar" placeholder="Buscar contenido...">
+        </div>
     </nav>
 
     <div id="video-modal">
@@ -147,9 +150,14 @@
         <div class="grid" id="unbox-grid"></div>
     </section>
 
+    <section id="builds" class="shelf">
+        <h2>PC Builds Increíbles</h2>
+        <div class="grid" id="builds-grid"></div>
+    </section>
+
     <section id="contacto" class="contact-section">
         <h2>¿Necesitas Soporte Técnico?</h2>
-        <p>Escribe los detalles del problema de tu equipo y recibirás una respuesta técnica a la brevedad.</p>
+        <p>Escribe los detalles del problema de tu equipo y me pondré en contacto para una respuesta técnica.</p>
         <form class="contact-form">
             <input type="text" placeholder="Tu Nombre Completo" required>
             <input type="email" placeholder="Correo Electrónico" required>
@@ -159,16 +167,19 @@
     </section>
 
     <script>
-        // LISTA DE VIDEOS (Aquí agregaremos los que me pases)
         const categories = {
             'repair-grid': [
-                { id: "BCnQGgctQ_Y", title: "Mantenimiento Preventivo de PC (El que me pasaste)" },
-                { id: "v4o_2_6v4vI", title: "Diagnóstico: PC no enciende" },
-                { id: "6-mI_Fm0HTo", title: "Guía de Montaje Hardware 2024" }
+                { id: "BCnQGgctQ_Y", title: "Mantenimiento Preventivo de PC" },
+                { id: "IimIsW4S_vs", title: "Diagnóstico: PC no enciende | Sin señales de vida" },
+                { id: "v4o_2_6v4vI", title: "Diagnóstico: PC enciende pero no da imagen" }
             ],
             'unbox-grid': [
-                { id: "9PbtP9v9H68", title: "Unboxing Extremo: RTX 4090" },
-                { id: "ny_W8pBof0M", title: "Review Teclado Mecánico Custom" },
+                { id: "N_psXRtVgAQ", title: "¡He LANZADO mi TECLADO Mecánico Custom! (Nate Gentile)" },
+                { id: "-fTogZgBXwE", title: "Unboxing Extremo: NVIDIA RTX 4090 ASUS ROG Strix" },
+                { id: "ny_W8pBof0M", title: "Review Teclado Mecánico Custom (Wooting)" }
+            ],
+            'builds-grid': [
+                { id: "4otj4TZmOZs", title: "Guía de Montaje Hardware 2024 Paso a Paso" },
                 { id: "PXaLc9AYIcg", title: "Build Refrigeración Líquida (Video 10)" }
             ]
         };
@@ -194,17 +205,15 @@
             const container = document.getElementById('modal-video-container');
             document.getElementById('modal-video-title').innerText = title;
             
-            // Cargamos el video solo al abrir
             container.innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/${id}?autoplay=1&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
             modal.style.display = 'flex';
         }
 
         function closeVideo() {
             document.getElementById('video-modal').style.display = 'none';
-            document.getElementById('modal-video-container').innerHTML = ""; // Detenemos el video
+            document.getElementById('modal-video-container').innerHTML = ""; 
         }
 
-        // Buscador
         document.getElementById('searchBar').addEventListener('input', (e) => {
             const term = e.target.value.toLowerCase();
             document.querySelectorAll('.card').forEach(card => {
